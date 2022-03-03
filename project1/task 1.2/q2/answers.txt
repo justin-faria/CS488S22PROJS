@@ -1,0 +1,11 @@
+I believe the delay will be around 160ms.
+The throughput will be: 20mbit/s because that is the bottle neck in the path to h4.
+
+This is because when you open the proj1_topo.py, you can get information on all the switches and links in regards to their back and forth delay and corresponding mbit speed for that connection.
+
+To measure the latency, you find the sum of latencies from all the switches leading from h1 to h4, and then the sum in reverse. From h1-h4 the sum is 80, so on the way back it should be another 80, leading to a total RTT of 160.
+
+The measured RTT avg was 164, which although isn't exactly my prediction, is very close. This variation could be due to timing differences between the server/client and very small errors. I would like to think my prediciton was still pretty accurate.
+
+The measured throughput was 17.5mbit/s at h1 and 24.0mbit/s at h4 which was expected considering the first switch out of h1 has a link speed of 20mbit and the first switch out of h4 has a link speed of 30mbit.
+This averages out to 20.4 which is close to 20mbit/s which was my prediction. The throughput will always be limited by the slowest node.

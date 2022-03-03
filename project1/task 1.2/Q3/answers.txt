@@ -1,0 +1,56 @@
+
+Q3.
+
+	Two Hosts: 
+	h1 -> h4: rtt min/avg/max/mdev = 161.736/166.146/187.055/5.933 ms
+          throughput = 15.1623 Mbps
+	h7 -> h8: rtt min/avg/max/mdev = 160.655/161.674/162.675/0.728 ms
+          throughput = 5.0733 Mbps
+
+	Three hosts: 
+	h1 -> h4: rtt min/avg/max/mdev = 160.433/162.942/176.873/3.757 ms
+          throughput = 9.5088 Mbps
+	h7 -> h9: rtt min/avg/max/mdev = 160.962/162.692/174.866/3.167 ms
+          throughput = 4.8302 Mbps
+	h10 -> h8: rtt min/avg/max/mdev = 160.775/162.596/172.207/2.671 ms
+           throughput = 6.0743 Mbps
+
+      	Expected throughput: should add up to about 20 Mbps
+      	Actual throughput: 20.4133≈ 20
+
+      	Expected vs Actual latency: The average latency didn't change much, as expected.(rtt≈ 160)
+
+     	Explanation: Simultaneous connections don't significantly affect latency but they do 
+	for throughput. TCP prevents delays/congestion in the queue .
+
+
+
+
+	Two Pairs of hosts communicating simultaneously: 
+	h1 -> h4: rtt min/avg/max/mdev = 160.716/162.267/169.150/1.805 ms
+          throughput = 15.1804 Mbps
+	h7 -> h9: rtt min/avg/max/mdev = 163.870/166.633/183.015/4.700 ms
+          throughput = 5.5912 Mbps
+
+
+
+      	Expected throughput: should add up to about 20 Mbps
+      	Actual throughput:20.7716≈ 20
+
+	Expected vs Actual latency: The average latency didn't change much, as expected.(rtt≈ 160)
+
+     	Explanation: Simultaneous connections don't significantly affect latency.
+
+Q4.
+
+	h1->h4: average rtt=162.899ms
+	h5->h6: average rtt=43.070ms
+
+      	Expected throughput: should add up to about 20 Mbps
+      	Actual throughput:24.3207≈ 20
+
+	Expected vs Actual latency: Latency was affected but the delay of spanning L1-L3 to connect 				
+	h1&h4 and spanning L4, L2, and L5 to connect h5&h6 .
+
+     	Explanation: The Bandwidth with a throughput limit of about 20 mbps is being shared by both
+	connections. 

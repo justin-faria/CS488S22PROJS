@@ -1,0 +1,4 @@
+Based on the screenshot, we see that the connection being made is persistent.
+We can tell by looking at the http header on the request. 
+The http version is 1.1, which is persistent by default
+The connection is also "Keep-Alive," if it were to say "Close," then it would be non-persistent
